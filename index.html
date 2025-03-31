@@ -3,15 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mostrar Datos de Firebase</title>
+    <title>Gestión de Usuarios con Firebase</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
   </head>
   <body>
-    <h1>Datos del Documento</h1>
+    <h1>Gestión de Usuarios</h1>
+
+    <!-- Formulario para añadir usuarios -->
+    <form id="formularioUsuario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+      <label for="apellidos">Apellidos:</label>
+      <input type="text" id="apellidos" name="apellidos" required />
+      <button type="submit">Añadir Usuario</button>
+    </form>
+
+    <!-- Tabla para mostrar los usuarios -->
     <div id="data-container">
-      <!-- Aquí se mostrarán los datos -->
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody"></tbody>
+      </table>
     </div>
+
+    <script src="config.js" type="module"></script>
     <script src="index.js" type="module"></script>
   </body>
 </html>
